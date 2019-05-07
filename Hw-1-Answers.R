@@ -35,10 +35,10 @@ mean(ozone_data[!missingOzone])
 #extract the subset of rows where Ozone > 31, and Temp > 90. 
 #what is the mean of Solar.R in this subset?
 
-sub0 <- data[data$Ozone > 31, , drop = FALSE]
-sub1 <- sub0[sub0$Temp > 90, , drop = FALSE]
-sub2 <- na.omit(sub1)
-mean(sub2$Solar.R)
+sub0 <- data[data$Ozone > 31, , drop = FALSE]  #filter for ozone data. Keep in dataframe format
+sub1 <- sub0[sub0$Temp > 90, , drop = FALSE]  #filter the filtered ozone data for temp. Keep in dataframe format
+sub2 <- na.omit(sub1)                         #omit records with NA in them
+mean(sub2$Solar.R)                            #find the mean of the solar radiation of this filtered dataset
 
 #What is the mean of "Temp" when "Month" is equal to 6?
 June <- data[data$Month ==6,]
